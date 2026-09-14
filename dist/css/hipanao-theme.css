@@ -1,0 +1,432 @@
+/* ==========================================================================
+   HIPANAO SOLUTIONS - Custom AdminLTE theme
+   Consistent modern design layer on top of AdminLTE for ALL modules
+   (Student, Course, Subject, Enrollment, User, User Type, Generic, About)
+   ========================================================================== */
+
+:root{
+  --hipanao-primary:   #8B0000;
+  --hipanao-primary-2: #a30d0d;
+  --hipanao-light:     #f4f6f9;
+  --hipanao-border:    #e9ecef;
+}
+
+body, .content-wrapper{
+  background-color: var(--hipanao-light);
+}
+
+/* ---------- Top navbar : clean white bar with maroon accents ---------- */
+.main-header.navbar{
+  background-color: #fff !important;
+  border-bottom: 1px solid var(--hipanao-border);
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.main-header.navbar .nav-link{ color: #495057 !important; }
+.main-header.navbar .nav-link:hover{ color: var(--hipanao-primary) !important; }
+.main-header .navbar-search-block .form-control{
+  border-radius: 20px;
+}
+
+/* Global quick-search pill in the navbar */
+.hipanao-quicksearch{
+  position: relative;
+}
+.hipanao-quicksearch input{
+  border-radius: 20px;
+  padding-left: 2.1rem;
+  background-color: var(--hipanao-light);
+  border: 1px solid var(--hipanao-border);
+  min-width: 220px;
+}
+.hipanao-quicksearch i{
+  position: absolute;
+  left: .8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9aa0a6;
+}
+
+.navbar-user-chip{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.25rem .6rem;
+  border-radius: 20px;
+}
+.navbar-user-chip:hover{ background-color: var(--hipanao-light); }
+.navbar-user-chip img{
+  width: 30px; height: 30px; object-fit: cover;
+  border: 2px solid var(--hipanao-primary);
+}
+.navbar-user-chip .chip-name{ color:#343a40; font-weight:600; line-height:1.1; }
+.navbar-user-chip .chip-role{ color:#8b8f95; font-size:.72rem; line-height:1; }
+
+/* User account dropdown - avatar circle (widget-user-image).
+   Force equal width/height + object-fit so any source photo (whatever
+   its own aspect ratio) still renders as a perfect circle, not an oval. */
+.widget-user .widget-user-image > img{
+  height: 90px !important;
+  object-fit: cover;
+}
+
+/* ---------- Sidebar ---------- */
+.main-sidebar{ box-shadow: 2px 0 6px rgba(0,0,0,.08); }
+.brand-link{ border-bottom: 1px solid rgba(255,255,255,.15) !important; }
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active,
+.sidebar-dark-primary .nav-sidebar > .nav-item .nav-treeview > .nav-item > .nav-link.active{
+  background-color: var(--hipanao-primary);
+  color:#fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(139,0,0,.4);
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link{
+  border-radius: 8px;
+  margin: 2px 8px;
+  width: auto;
+}
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover{
+  background-color: rgba(255,255,255,.08);
+  border-radius: 8px;
+}
+.sidebar-dark-primary .nav-treeview > .nav-item > .nav-link{
+  border-radius: 8px;
+  margin: 2px 8px 2px 20px;
+  width: auto;
+}
+
+/* ---------- Content header ---------- */
+.content-header h1{ font-weight: 600; }
+
+/* ---------- Cards ---------- */
+.card{
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+}
+.card.card-outline{ border-top-width: 3px; }
+.card-header{
+  background-color: transparent;
+  border-bottom: 1px solid var(--hipanao-border);
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  padding: .9rem 1.1rem;
+}
+.card-header .card-title{
+  font-weight: 700;
+  font-size: 1.05rem;
+  color:#2c2f33;
+}
+.card-header .card-subtitle{
+  font-size:.8rem;
+  color:#8b8f95;
+  margin-top:2px;
+}
+
+/* Reusable "list toolbar" - title + search + primary action button */
+.hipanao-toolbar{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  gap:.6rem;
+}
+.hipanao-toolbar .hipanao-toolbar-actions{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+
+/* ---------- Buttons ---------- */
+.btn{ border-radius: 6px; }
+.btn-primary{
+  background-color: var(--hipanao-primary);
+  border-color: var(--hipanao-primary);
+}
+.btn-primary:hover, .btn-primary:focus{
+  background-color: var(--hipanao-primary-2);
+  border-color: var(--hipanao-primary-2);
+}
+.btn-pill{ border-radius: 20px; padding: .4rem 1rem; }
+.btn-add-new{
+  border-radius: 20px;
+  font-weight: 600;
+  padding: .45rem 1.1rem;
+  box-shadow: 0 2px 6px rgba(139,0,0,.25);
+}
+
+/* Round icon-only action buttons used on every list (Edit / Delete / View / etc.) */
+.action-btn{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% !important;
+  margin: 0 2px;
+  font-size: .8rem;
+  line-height: 1;
+}
+
+/* ---------- Tables ---------- */
+.table{ margin-bottom: .5rem; }
+.table thead th{
+  background-color: var(--hipanao-light);
+  color: #6c757d;
+  font-size: .74rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  border-bottom-width: 1px;
+  white-space: nowrap;
+}
+.table-striped tbody tr:nth-of-type(odd){ background-color: rgba(0,0,0,.015); }
+.table-hover tbody tr:hover, .table.dataTable tbody tr:hover{
+  background-color: rgba(139,0,0,.05);
+}
+.table td{ vertical-align: middle; }
+
+/* Avatar circle used in User / Student tables, similar to AdminLTE "Users" list */
+.hipanao-avatar{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--hipanao-border);
+  margin-right: .6rem;
+  vertical-align: middle;
+}
+.hipanao-cell-user{ display:flex; align-items:center; }
+
+/* ---------- Badges / pills for STATUS, ROLE, GENDER, etc ---------- */
+.badge{
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: .72rem;
+  padding: .35em .75em;
+}
+.badge-pill-status-active,  .badge-status-active   { background-color:#28a745; color:#fff; }
+.badge-pill-status-inactive,.badge-status-inactive { background-color:#6c757d; color:#fff; }
+.badge-pill-status-pending, .badge-status-pending  { background-color:#ffc107; color:#212529; }
+.badge-pill-status-suspended,.badge-status-suspended,
+.badge-status-dropped{ background-color:#dc3545; color:#fff; }
+.badge-status-reserved{ background-color:#ffc107; color:#212529; }
+.badge-status-enrolled{ background-color:#28a745; color:#fff; }
+.badge-status-completed{ background-color:#17a2b8; color:#fff; }
+.badge-status-graduated{ background-color:#6610f2; color:#fff; }
+/* HIPANAO SOLUTIONS - "Assign" stage badge (subjects assigned, ready
+   for payment) - Register/Enroll reuse the reserved/enrolled colors
+   above since those status names now mean the same stage. */
+.badge-status-assign{ background-color:#007bff; color:#fff; }
+.badge-role-administrator{ background-color:#dc3545; color:#fff; }
+.badge-role-editor{ background-color:#007bff; color:#fff; }
+.badge-role-author{ background-color:#17a2b8; color:#fff; }
+.badge-role-subscriber{ background-color:#6c757d; color:#fff; }
+.badge-gender-male{ background-color:#007bff; color:#fff; }
+.badge-gender-female{ background-color:#e83e8c; color:#fff; }
+/* HIPANAO SOLUTIONS - Payment module badges */
+.badge-status-forpayment{ background-color:#17a2b8; color:#fff; }
+.badge-subject-major{ background-color:#6f42c1; color:#fff; }
+.badge-subject-minor{ background-color:#20c997; color:#fff; }
+
+/* ---------- DataTables search box + pager, restyled ---------- */
+div.dataTables_wrapper div.dataTables_filter input{
+  border-radius: 20px;
+  border: 1px solid var(--hipanao-border);
+  padding: .3rem .9rem;
+}
+div.dataTables_wrapper div.dataTables_length select{
+  border-radius: 6px;
+}
+table.dataTable thead th{ border-bottom: 2px solid var(--hipanao-border) !important; }
+
+/* ---------- Modals / forms ---------- */
+.modal-content{
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.modal-header{
+  background-color: #fff;
+  color: #2c2f33;
+  border-bottom: 1px solid var(--hipanao-border);
+  padding: 1rem 1.4rem;
+}
+.modal-header .modal-title{ font-weight: 700; }
+.modal-header .modal-title i{ color: var(--hipanao-primary); }
+.modal-header .close{ color: #2c2f33; opacity: .6; text-shadow: none; }
+.modal-header .close:hover{ opacity: 1; }
+/* Optional filled variants for special dialogs, opt-in via extra class */
+.modal-header.modal-header-fill{ background-color: var(--hipanao-primary); color:#fff; border-bottom:none; }
+.modal-header.modal-header-fill .modal-title i{ color:#fff; }
+.modal-header.modal-header-fill .close{ color:#fff; opacity:.85; }
+.modal-header.modal-header-warning{ background-color: #d39e00; color:#fff; border-bottom:none; }
+.modal-header.modal-header-warning .close{ color:#fff; }
+.modal-header.modal-header-info{ background-color: #17a2b8; color:#fff; border-bottom:none; }
+.modal-header.modal-header-info .close{ color:#fff; }
+.modal-body{ padding: 1.3rem 1.4rem; }
+.modal-footer{ border-top: 1px solid var(--hipanao-border); }
+
+.form-group label{ font-weight: 600; color:#495057; font-size:.8rem; }
+.form-control{ border-radius: 6px; }
+.form-control:focus{
+  border-color: var(--hipanao-primary);
+  box-shadow: 0 0 0 .15rem rgba(139,0,0,.15);
+}
+.form-control-sm{ border-radius: 6px; }
+
+/* Photo upload preview circle, used in Student / User forms */
+.hipanao-photo-upload{ text-align:center; }
+.hipanao-photo-upload img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--hipanao-primary);
+  margin-bottom: .6rem;
+}
+
+/* ---------- Student profile view (module/student/view.php) ---------- */
+.profile-user-img{
+  border: 3px solid var(--hipanao-primary);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50% !important;
+}
+.box-profile .profile-username{ font-weight: 700; }
+.nav-tabs .nav-link.active{
+  border-top: 2px solid var(--hipanao-primary);
+  font-weight: 600;
+}
+
+/* ---------- Callouts ---------- */
+.callout{ border-radius: 8px; }
+
+/* ---------- Misc ---------- */
+.small-box, .info-box{ border-radius: 10px; }
+::-webkit-scrollbar{ height: 8px; width: 8px; }
+::-webkit-scrollbar-thumb{ background: #c7c9cc; border-radius: 10px; }
+
+/* ==========================================================================
+   DARK MODE  (toggled via body.dark-mode, same idea as AdminLTE's switch)
+   ========================================================================== */
+#hipanaoDarkModeToggle i{ color: #6c757d; }
+body.dark-mode #hipanaoDarkModeToggle i{ color: #ffc107; }
+
+body.dark-mode{ background-color: #10131a; color: #c2c7d0; }
+body.dark-mode .content-wrapper{ background-color: #10131a; }
+
+body.dark-mode .main-header.navbar{
+  background-color: #1a1d27 !important;
+  border-bottom-color: #2c3040;
+}
+body.dark-mode .main-header.navbar .nav-link{ color: #c2c7d0 !important; }
+body.dark-mode .main-header.navbar .nav-link:hover{ color: #fff !important; }
+body.dark-mode .hipanao-quicksearch input{
+  background-color: #232733;
+  border-color: #2c3040;
+  color: #c2c7d0;
+}
+body.dark-mode .hipanao-quicksearch input::placeholder{ color: #6c7386; }
+body.dark-mode .navbar-user-chip:hover{ background-color: #232733; }
+body.dark-mode .navbar-user-chip .chip-name{ color: #e4e6eb; }
+
+body.dark-mode .content-header h1{ color: #e4e6eb; }
+body.dark-mode .breadcrumb-item a{ color: #9aa4b8; }
+body.dark-mode .breadcrumb-item.active{ color: #6c7386; }
+
+body.dark-mode .card{
+  background-color: #1a1d27;
+  color: #c2c7d0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+body.dark-mode .card-header{
+  border-bottom-color: #2c3040;
+}
+body.dark-mode .card-header .card-title{ color: #e4e6eb; }
+body.dark-mode .card-header .card-subtitle{ color: #838ba0; }
+body.dark-mode .card-footer{ background-color: #1a1d27; border-top-color: #2c3040; }
+body.dark-mode .list-group-item{
+  background-color: #1a1d27;
+  border-color: #2c3040;
+  color: #c2c7d0;
+}
+
+/* Broken / missing photo placeholder (student & user profile photos) -
+   keep it from showing as a stark white box on the dark background. */
+body.dark-mode .profile-user-img,
+body.dark-mode .hipanao-photo-upload img{
+  background-color: #232733;
+}
+
+body.dark-mode .table{ color: #c2c7d0; }
+body.dark-mode .table thead th{
+  background-color: #232733;
+  color: #9aa4b8;
+  border-color: #2c3040;
+}
+body.dark-mode .table td, body.dark-mode .table th{ border-color: #2c3040; }
+body.dark-mode .table-striped tbody tr:nth-of-type(odd){ background-color: rgba(255,255,255,.02); }
+body.dark-mode .table-hover tbody tr:hover, body.dark-mode .table.dataTable tbody tr:hover{
+  background-color: rgba(139,0,0,.15);
+}
+body.dark-mode div.dataTables_wrapper div.dataTables_filter input{
+  background-color: #232733;
+  border-color: #2c3040;
+  color: #c2c7d0;
+}
+body.dark-mode div.dataTables_wrapper div.dataTables_length select,
+body.dark-mode div.dataTables_wrapper div.dataTables_info,
+body.dark-mode div.dataTables_wrapper div.dataTables_paginate{
+  color: #c2c7d0;
+}
+body.dark-mode table.dataTable thead th{ border-bottom-color: #2c3040 !important; }
+
+body.dark-mode .modal-content{ background-color: #1a1d27; color: #c2c7d0; }
+body.dark-mode .modal-header{
+  background-color: #1a1d27;
+  color: #e4e6eb;
+  border-bottom-color: #2c3040;
+}
+body.dark-mode .modal-header .close{ color: #c2c7d0; }
+body.dark-mode .modal-footer{ border-top-color: #2c3040; }
+
+body.dark-mode .form-group label{ color: #9aa4b8; }
+body.dark-mode .form-control, body.dark-mode .form-control-sm,
+body.dark-mode select.form-control, body.dark-mode textarea.form-control{
+  background-color: #232733;
+  border-color: #2c3040;
+  color: #e4e6eb;
+}
+body.dark-mode .form-control:focus{
+  background-color: #232733;
+  color: #e4e6eb;
+}
+body.dark-mode .form-control::placeholder{ color: #6c7386; }
+body.dark-mode .custom-file-label{ background-color: #232733; border-color: #2c3040; color: #c2c7d0; }
+body.dark-mode .custom-file-label::after{ background-color: #2c3040; color: #c2c7d0; }
+
+body.dark-mode .dropdown-menu{ background-color: #1a1d27; border-color: #2c3040; }
+body.dark-mode .dropdown-item{ color: #c2c7d0; }
+body.dark-mode .dropdown-item:hover{ background-color: #232733; color: #fff; }
+
+body.dark-mode .callout{ background-color: #1a1d27; }
+body.dark-mode .text-muted{ color: #838ba0 !important; }
+body.dark-mode hr{ border-top-color: #2c3040; }
+body.dark-mode .main-footer{
+  background-color: #1a1d27;
+  color: #838ba0;
+  border-top-color: #2c3040;
+}
+body.dark-mode .btn-default{
+  background-color: #232733;
+  border-color: #2c3040;
+  color: #c2c7d0;
+}
+body.dark-mode .btn-default:hover{ background-color: #2c3040; color: #fff; }
+
+/* Sidebar is already dark by default (sidebar-dark-primary), just tie its
+   accent to the same background family used everywhere else in dark mode */
+body.dark-mode .main-sidebar{ background-color: #161822 !important; }
+body.dark-mode .brand-link{ background-color: #161822; }
