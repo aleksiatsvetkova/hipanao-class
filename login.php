@@ -5,7 +5,7 @@ require_once("include/initialize.php");
 if (isset($_SESSION['UID'])) {
     redirect_to("index.php");
 }
-
+// test comment
 
 // =====================================================
 // STEP: WHICH LOGIN SCREEN TO SHOW
